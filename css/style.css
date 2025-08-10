@@ -1,14 +1,10 @@
 /*Geral*/
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
-h1,
-h2,
-h4,
-h5,
-h6 {
-    font-family: 'Barlow Condensed', sans-serif;
+h1, h2, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
 }
 
 .btn {
@@ -112,15 +108,17 @@ h6 {
 
 /*CTA Home*/
 .bg-home {
-    background: url("../img/bg-mobile.png") #110641 center bottom no-repeat;
+    background: url("../img/bg-desktop.webp") #0d3b66 center bottom no-repeat;
     background-size: cover;
+    background-blend-mode: multiply;
     margin-top: 74px;
 }
 
-@media(min-width:768px) {
+@media (min-width: 768px) {
     .bg-home {
-        background: url("../img/bg-desktop.png") #110641 center bottom no-repeat;
+        background: url("../img/bg-desktop.webp") #0d3b66 center bottom no-repeat;
         background-size: cover;
+        background-blend-mode: multiply;
         margin-top: 80px;
     }
 }
@@ -345,8 +343,9 @@ h6 {
 
 @media (min-width:768px) {
     .sobre {
-        background: url("../img/bg-sobre-desktop.png") center center no-repeat;
+        background: url("../img/bg-sobre-desktop.png") #0d3b66 center center no-repeat;
         background-size: cover;
+        background-blend-mode: multiply;
         padding: 100px 0 400px;
     }
 
@@ -415,4 +414,22 @@ h6 {
 .copy {
     font-size: 11px;
     color: #8D8D8D;
+}
+
+.btn-whatsapp {
+    background-color: #1EBE59; /* Verde WhatsApp adaptado */
+    border-color: #1EBE59;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 6px;
+}
+
+.btn-whatsapp:hover {
+    background-color: #159e49;
+    border-color: #159e49;
+}
+
+.btn-whatsapp:active {
+    background-color: #0f7a38 !important;
+    border-color: #0f7a38 !important;
 }

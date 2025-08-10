@@ -25,370 +25,210 @@
   <meta name="twitter:description" content=" " />
   <meta name="twitter:title" content=" " />
 
-  <!-- jQuery para aplicar mascara do telefone -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
-
-
   <link rel="canonical" href=" " />
   <link rel="shortcut icon" href="img/favicon.png" />
 
   <title>Oregon</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet" />
 </head>
 
 <body>
-  <script>
-    function validateEmail(email) {
-      var atSymbol = email.indexOf("@");
-      return atSymbol > 0;
-    }
-
-    function sendEmail() {
-      var name = document.getElementById("from_name").value;
-      var email = document.getElementById("email").value;
-      var whatsapp = document.getElementById("whatsapp").value;
-      var message = document.getElementById("message").value;
-
-      if (!validateEmail(email)) {
-        alert("Por favor, insira um e-mail válido.");
-        return;
-      }
-
-      emailjs
-        .send("service_ak95svj", "template_91xs5x9", {
-          from_name: name,
-          from_email: email,
-          from_whatsapp: whatsapp,
-          message: message,
-        })
-        .then(
-          function (response) {
-            alert("E-mail enviado com sucesso!");
-          },
-          function (error) {
-            alert("Falha ao enviar o e-mail. Tente novamente mais tarde.");
-          }
-        );
-    }
-
-    function sendEmailModal() {
-      var name = document.getElementById("from_name_modal").value;
-      var email = document.getElementById("email_modal").value;
-      var whatsapp = document.getElementById("whatsapp_modal").value;
-      var message = document.getElementById("message_modal").value;
-
-      if (!validateEmail(email)) {
-        alert("Por favor, insira um e-mail válido.");
-        return;
-      }
-
-      emailjs
-        .send("service_ak95svj", "template_91xs5x9", {
-          from_name: name,
-          from_email: email,
-          from_whatsapp: whatsapp,
-          message: message,
-        })
-        .then(
-          function (response) {
-            alert("E-mail enviado com sucesso!");
-            var myModal = bootstrap.Modal.getInstance(document.getElementById("contatoModal"));
-            myModal.hide();
-          },
-          function (error) {
-            alert("Falha ao enviar o e-mail. Tente novamente mais tarde.");
-          }
-        );
-    }
-  </script>
-  <script>
-    (function () {
-      emailjs.init("udUKbSX0ziGAoC2jC"); // Agora é a chave pública do EmailJS
-    })();
-  </script>
-  <header>
-    <nav class="navbar navbar-expand-lg fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="#inicio">
-          <img src="img/logo.svg" alt="Oregon">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <img src="img/icon-menu.svg" alt="Menu" width="25">
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="nav justify-content-end">
-            <li class="nav-item">
-              <a class="nav-link" href="#inicio">Início</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#produtos">Produtos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#sobrenos">Sobre Nós</a>
-            </li>
-            <li class="nav-item">
-              <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                data-bs-target="#contatoModal">Contato</button>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
-
-  <div class="bg-home" id="inicio">
+<header>
+  <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
-      <div class="row" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="0" data-aos-offset="0"
-        data-aos-duration="900">
-        <div class="col-sm-12 col-md-6">
-          <div class="cta-home">
+      <a class="navbar-brand" href="#inicio">
+        <img src="img/logo.svg" alt="Oregon">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <img src="img/icon-menu.svg" alt="Menu" width="25">
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link" href="#inicio">Início</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#produtos">Produtos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#sobrenos">Sobre Nós</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-success" href="https://wa.me/5548991743432" target="_blank">WhatsApp</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="bg-home" id="inicio">
+  <div class="container">
+    <div class="row" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="0" data-aos-offset="0"
+         data-aos-duration="900">
+      <div class="col-sm-12 col-md-6">
+        <div class="cta-home">
             <span class="title">Criação e Desenvolvimento de Aplicativos, Plataformas, Sistemas e Softwares voltados
               para a Área Jurídica</span>
-            <span class="text">A Oregon foi fundada para ajudar Pessoas Físicas e Jurídicas da Iniciativa
+          <span class="text">A Oregon foi fundada para ajudar Pessoas Físicas e Jurídicas da Iniciativa
               Privada e Órgãos Públicos a conciliarem os Avanços tecnológicos e a Área Jurídica, mediante Soluções com
               uso de Inteligência Artificial.</span>
-            <a href="#formIdeia" class="btn btn-danger btn-lg">QUERO APRESENTAR MEU PROBLEMA</a>
-          </div>
+          <a href="https://wa.me/5548991743432" target="_blank" class="btn btn-danger btn-lg">QUERO APRESENTAR MEU PROBLEMA</a>
         </div>
-        <div class="col-sm-12 col-md-6">
-          <img src="img/img-dobra.png" alt="Oregon" class="cta-home-img">
+      </div>
+      <div class="col-sm-12 col-md-6">
+        <img src="img/doing.png" alt="Oregon" class="cta-home-img">
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="produtos" id="produtos">
+  <div class="container" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="0" data-aos-offset="0" data-aos-duration="900">
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <h2>Oregon Procuradorias</h2>
+        <p>Principais funcionalidades da linha de produtos Oregon para Procuradorias</p>
+        <div class="row g-4 mt-5">
+
+          <div class="col-sm-6 col-md-3 text-center">
+            <img src="img/img1.png" alt="Integração com Tribunais" class="img-fluid mb-3" width="80">
+            <h5>Integração com Tribunais</h5>
+            <p class="small">Interoperabilidade completa com os sistemas judiciários, do recebimento até o protocolo.</p>
+          </div>
+
+          <div class="col-sm-6 col-md-3 text-center">
+            <img src="img/img4.png" alt="Usabilidade" class="img-fluid mb-3" width="80">
+            <h5>Usabilidade</h5>
+            <p class="small">Foco na experiência do usuário e
+              facilidade de uso</p>
+          </div>
+
+          <div class="col-sm-6 col-md-3 text-center">
+            <img src="img/img5.png" alt="Unidades de atuação" class="img-fluid mb-3" width="80">
+            <h5>Unidades de atuação</h5>
+            <p class="small">Criação de grupos de trabalho
+              customizados.</p>
+          </div>
+
+          <div class="col-sm-6 col-md-3 text-center">
+            <img src="img/img2.png" alt="Impulso Automático da Tramitação" class="img-fluid mb-3" width="80">
+            <h5>Impulso Automático da Tramitação</h5>
+            <p class="small">Menor participação humana para andamento processual.</p>
+          </div>
+
+          <div class="col-sm-6 col-md-3 text-center">
+            <img src="img/img3.png" alt="Biblioteca de Peças" class="img-fluid mb-3" width="80">
+            <h5>Biblioteca de Peças</h5>
+            <p class="small">Acervo de manifestações protocoladas e modelos elaborados.</p>
+          </div>
+
+          <div class="col-sm-6 col-md-3 text-center">
+            <img src="img/img9.png" alt="Segurança de Dados" class="img-fluid mb-3" width="80">
+            <h5>Atuação de Inteligência Artificial</h5>
+            <p class="small">Elaboração de minutas de peças judiciais
+              a partir da aprendizagem supervisionada</p>
+          </div>
+
+          <div class="col-sm-6 col-md-3 text-center">
+            <img src="img/img7.png" alt="Suporte Técnico" class="img-fluid mb-3" width="80">
+            <h5>Pesquisa Judicial</h5>
+            <p class="small">Localize qualquer processo facilmente.</p>
+          </div>
+
+          <div class="col-sm-6 col-md-3 text-center">
+            <img src="img/img8.png" alt="Dashboard Inteligente" class="img-fluid mb-3" width="80">
+            <h5>Equalização de Demandas</h5>
+            <p class="small">Critério de distribuição de prazos para equilíbrio na carga de trabalho.</p>
+          </div>
+
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="produtos" id="produtos">
-    <div class="container" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="0" data-aos-offset="0"
-      data-aos-duration="900">
-      <div class="row">
-        <div class="col-sm-12 col-md-4">
-          <div class="box-text">
-            <div class="title">Conheça nossos produtos</div>
-            <div class="text">Em 2025 serão lançados Três novos produtos originais criados pela Oregon</div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-12 col-md-3">
-            <a href="#">
-              <img src="img/produto-jurisconta.png" class="img-produto" alt="Jurisconta" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ir para o site">
-            </a>
-          </div>
-          <div class="col-sm-12 col-md-3">
-            <img src="img/produto-1.png" class="img-produto" alt="Em breve">
-          </div>
-          <div class="col-sm-12 col-md-3">
-            <img src="img/produto-2.png" class="img-produto" alt="Em breve">
-          </div>
+<div class="bg-laranja" id="formIdeia">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="form-text" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="0"
+             data-aos-offset="0" data-aos-duration="900">
+          <img src="img/ico-ideia.svg" alt="Ideia" width="75">
+          <div class="title">Quer resolver, com Inteligência Artificial ou outras Formas de Tecnologia, um problema
+            que envolva a Área Jurídica?</div>
+          <div class="text">Entre em contato com a Oregon pelo WhatsApp e relate seu Problema.</div>
+          <a href="https://wa.me/5548991743432" target="_blank" class="btn btn-success btn-lg mb-5 mt-5">Falar no WhatsApp</a>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="bg-laranja" id="formIdeia">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12 col-md-7">
-          <div class="form-text" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="0"
-            data-aos-offset="0" data-aos-duration="900">
-            <img src="img/ico-ideia.svg" alt="Ideia" width="75">
-            <div class="title">Quer resolver, com Inteligência Artificial ou outras Formas de Tecnologia, um problema
-              que envolva a Área Jurídica?</div>
-            <div class="text">Entre em contato com a Oregon e relate seu Problema.</div>
-            <div class="text">Uma Equipe Multidisciplinar, com Profissionais do Direito e da Tecnologia da Informação,
-              retornará o mais brevemente o seu contato para marcar uma reunião.</div>
-            <div class="text">Após a Reunião, a Oregon analisará <strong>gratuitamente</strong> a viabilidade das
-              Soluções
-              tecnológicas
-              disponíveis
-              na atualidade para resolver o problema relatado e, caso positivo, enviará proposta para tirar a solução do
-              papel e transformá-la em realidade.</div>
-          </div>
-        </div>
-        <div class="col-sm-12 col-md-5">
-          <div class="box-form" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="0"
-            data-aos-offset="0" data-aos-duration="1500">
-            <div class="title-form">Entre em contato</div>
-            <form action="">
-              <div class="mb-3">
-                <label for="" class="form-label"><small>Nome*</small></label>
-                <input type="text" id="from_name" class="form-control" placeholder="Nome completo">
-              </div>
-              <div class="mb-3">
-                <label for="" class="form-label"><small>E-mail*</small></label>
-                <input type="text" id="email" class="form-control" placeholder="Ex.: carlosh@gmail.com">
-              </div>
-              <div class="mb-3">
-                <label for="" class="form-label"><small>WhatsApp</small></label>
-                <input type="text" id="whatsapp" class="form-control" placeholder="(__) _ ____-____">
-              </div>
-              <div class="mb-3">
-                <label for="" class="form-label"><small>Mensagem</small></label>
-                <textarea id="message" class="form-control" placeholder="Escreva sua mensagem aqui" rows="4"></textarea>
-              </div>
-              <div class="mb-3">
-                <button type="button" class="btn btn-danger btn-lg btn-block" onclick="sendEmail()">ENVIAR</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="sobre" id="sobrenos">
+  <div class="container">
+    <div class="row align-items-center">
 
-  <script>
-    // Aplica terceiro número opcional (para casos de estados que ainda não exigem o 9)
-    function phoneMaskBehavior(val) {
-      return val.replace(/\D/g, '').length === 11 ? '(00) 0 0000-0000' : '(00) 0000-00009';
-    }
-
-    const phoneMaskOptions = {
-      onKeyPress: function (val, e, field, options) {
-        field.mask(phoneMaskBehavior.apply({}, arguments), options);
-      }
-    };
-
-    // Aplicação da máscara no campo no id 'whatsapp'
-    $('#whatsapp').mask(phoneMaskBehavior, phoneMaskOptions);
-  </script>
-
-  <div class="sobre" id="sobrenos">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12 col-md-4" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="0"
-          data-aos-offset="0" data-aos-duration="900">
-          <div class="title">A Oregon</div>
-          <div class="text">O futuro da Área Jurídica passa pela necessidade de serem adotadas Inteligência Artificial e
-            outras Formas de Tecnologia para a resolução, com rapidez, de problemas com que os operadores do Direito se
-            deparam cotidianamente.</div>
-          <div class="text">A Oregon surgiu exatamente para isto: trazer os avanços tecnológicos para a Área
-            Jurídica, colocando-os a serviço da praticidade.</div>
-          <div class="box-team" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="0"
-            data-aos-offset="0" data-aos-duration="1500">
-            <img src="img/ico-sobre.png" alt="Team">
-            <span>
+      <!-- Texto à esquerda -->
+      <div class="col-sm-12 col-md-6" data-aos="fade-zoom-in" data-aos-duration="900">
+        <div class="title">A Oregon</div>
+        <div class="text">O futuro da Área Jurídica passa pela necessidade de serem adotadas Inteligência Artificial e
+          outras Formas de Tecnologia para a resolução, com rapidez, de problemas com que os operadores do Direito se
+          deparam cotidianamente.</div>
+        <div class="text mb-5">A Oregon surgiu exatamente para isto: trazer os avanços tecnológicos para a Área
+          Jurídica, colocando-os a serviço da praticidade.</div>
+        <div class="box-team" data-aos="fade-zoom-in" data-aos-duration="1500">
+          <img src="img/ico-sobre.png" alt="Team">
+          <span>
               <b>Equipe Multidisciplinar</b><br>
               A Oregon compõe-se de profissionais do Direito e da Tecnologia da Informação com experiência decenal na
               criação e desenvolvimento de Aplicativos, Plataformas, Sistemas e Softwares voltados para a Área Jurídica.
             </span>
-          </div>
         </div>
       </div>
-    </div>
-  </div>
 
-
-  <footer class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12 col-md-2">
-          <img src="img/logo.svg" alt="Oregon" class="logo-footer">
-        </div>
-        <div class="col-sm-12 col-md-9 offset-md-1 col-lg-5 offset-lg-5">
-          <div class="row menu-footer">
-            <div class="col-sm-6 col-md-3">
-              <a href="index.html">Início</a>
-            </div>
-            <div class="col-sm-6 col-md-3">
-              <a href="#produtos">Produtos</a>
-            </div>
-            <div class="col-sm-6 col-md-3">
-              <a href="#sobrenos">Sobre Nós</a>
-            </div>
-            <div class="col-sm-6 col-md-3 menu-footer-btn">
-              <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                data-bs-target="#contatoModal">Contato</button>
-            </div>
-          </div>
-        </div>
+      <!-- Imagem à direita -->
+      <div class="col-sm-12 col-md-6" data-aos="fade-zoom-in" data-aos-duration="900">
+        <img src="img/sobre-mim.png" alt="Sobre a Oregon" class="img-fluid">
       </div>
-    </div>
-  </footer>
-  <div class="box-copy-contact">
-    <div class="copy">Copyright © Oregon®. Todos os direitos reservados.</div>
-  </div>
 
-  <!-- Modal Contato-->
-
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"
-    integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
-  <div class="modal fade" id="contatoModal" tabindex="-1" aria-labelledby="contatoModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5 d-block w-100" id="exampleModalLabel"><strong>Contato</strong></h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="d-block w-100"><small>Envie-nos uma mensagem, e em breve entraremos em contato
-              contigo!</small><br><br>
-          </div>
-          <form>
-            <div class="mb-3">
-              <label for="" class="form-label"><small><strong>Nome*</strong></small></label>
-              <input type="text" id="from_name_modal" class="form-control" placeholder="Ex.: Carlos Henrique">
-            </div>
-            <div class="mb-3">
-              <label for="" class="form-label"><small><strong>E-mail*</strong></small></label>
-              <input type="text" id="email_modal" class="form-control" placeholder="Ex.: carlosh@gmail.com">
-            </div>
-            <div class="mb-3">
-              <label for="" class="form-label"><small><strong>WhatsApp</strong></small></label>
-              <input type="text" id="whatsapp_modal" class="form-control" placeholder="(__) _ ____-____">
-            </div>
-            <script>
-              // Aplica terceiro número opcional (para casos de estados que ainda não exigem o 9)
-              function phoneMaskBehavior(val) {
-                return val.replace(/\D/g, '').length === 11 ? '(00) 0 0000-0000' : '(00) 0000-00009';
-              }
-
-              const modalPhoneMaskOptions = {
-                onKeyPress: function (val, e, field, options) {
-                  field.mask(phoneMaskBehavior.apply({}, arguments), options);
-                }
-              };
-
-              // Aplicação da máscara no campo no id 'whatsapp'
-              $('#whatsapp_modal').mask(phoneMaskBehavior, modalPhoneMaskOptions);
-            </script>
-            <div class="mb-3">
-              <label for="" class="form-label"><small><strong>Mensagem</strong></small></label>
-              <textarea rows="4" id="message_modal" class="form-control"
-                placeholder="Escreva aqui sua mensagem"></textarea>
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer justify-content-center">
-          <button type="button" class="btn btn-danger btn-lg btn-block" onclick="sendEmailModal()">Enviar</button>
-        </div>
-      </div>
     </div>
   </div>
+</div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-    crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"
-    integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
-  <script>
-    $('.nav-link').on('click', function () {
-      $('#navbarSupportedContent').collapse('hide');
-    });
-  </script>
+<div class="box-copy-contact">
+  <div class="copy">Copyright © Oregon®. Todos os direitos reservados.</div>
+
+    <div class="col-12 text-center">
+      <p class="mb-0">
+        <a href="https://www.google.com/maps?q=Rod.+Jos%C3%A9+Carlos+Daux,+4150+-+Saco+Grande,+Florian%C3%B3polis+-+SC,+88032-005"
+             target="_blank">
+        Rod. José Carlos Daux, 4150 - Saco Grande, Florianópolis - SC, 88032-005
+      </a>
+      </p>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+  $('.nav-link').on('click', function () {
+    $('#navbarSupportedContent').collapse('hide');
+  });
+</script>
 </body>
-
 </html>
