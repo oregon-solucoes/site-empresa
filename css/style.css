@@ -309,9 +309,10 @@ h1, h2, h4, h5, h6 {
 }
 
 .sobre {
-    background: url("../img/bg-sobre-mobile.png") center center no-repeat;
+    background: url("../img/bg-sobre-mobile.png") #0d3b66 center center no-repeat;
     background-size: cover;
     padding: 50px 0 550px;
+    background-blend-mode: multiply;
     color: #fff;
 }
 
